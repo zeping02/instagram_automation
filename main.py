@@ -50,7 +50,7 @@ def main():
         cl.login(username, password)
         print("Logged in successfully.")
         print("Searching for recent pet posts...")
-        medias = cl.hashtag_medias_recent('pets', amount=10)
+        medias = cl.hashtag_medias_recent('pets', amount=50)
         print(f"Found {len(medias)} pet posts.")
         for index, media in enumerate(medias):
             print(f"Processing post {index + 1} of {len(medias)}...")
@@ -68,9 +68,9 @@ def main():
                     print(f"Successfully saved post {media.id}")
 
                 # 等待 10 - 20 秒的随机时间
-                extra_delay = random.randint(10, 20)
-                print(f"Waiting for {extra_delay} seconds before commenting...")
-                time.sleep(extra_delay)
+                #extra_delay = random.randint(10, 20)
+                #print(f"Waiting for {extra_delay} seconds before commenting...")
+                #time.sleep(extra_delay)
 
                 comment = generate_comment(config)
                 print(f"Prepared comment: {comment} for post {media.id}")
